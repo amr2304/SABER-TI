@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Digital Elegante</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <header class="header">
+            <h1>Menu Bistrô</h1>
+            <p class="subtitle">Selecione seus itens e monte seu pedido</p>
+        </header>
+        
+        <main class="menu-section">
+            <label class="menu-card">
+                <input type="checkbox" class="item-menu hidden-checkbox" data-preco="15.00">
+                <div class="card-content">
+                    <div class="checkbox-custom"></div>
+                    <div class="item-details">
+                        <span class="item-name">Hambúrguer Gourmet</span>
+                        <span class="item-desc">Blend artesanal 150g, queijo prato e maionese da casa.</span>
+                    </div>
+                    <span class="item-price">R$ 15,00</span>
+                </div>
+            </label>
+
+            <label class="menu-card">
+                <input type="checkbox" class="item-menu hidden-checkbox" data-preco="7.00">
+                <div class="card-content">
+                    <div class="checkbox-custom"></div>
+                    <div class="item-details">
+                        <span class="item-name">Batata Rústica</span>
+                        <span class="item-desc">Batatas fritas temperadas com páprica e alecrim.</span>
+                    </div>
+                    <span class="item-price">R$ 7,00</span>
+                </div>
+            </label>
+
+            <label class="menu-card">
+                <input type="checkbox" class="item-menu hidden-checkbox" data-preco="5.00">
+                <div class="card-content">
+                    <div class="checkbox-custom"></div>
+                    <div class="item-details">
+                        <span class="item-name">Suco Natural</span>
+                        <span class="item-desc">Espremido na hora. Escolha laranja ou limão.</span>
+                    </div>
+                    <span class="item-price">R$ 5,00</span>
+                </div>
+            </label>
+        </main>
+
+        <section class="delivery-section">
+            <label class="delivery-toggle-label">
+                <div class="delivery-info">
+                    <span class="delivery-title">Deseja entrega em domicílio?</span>
+                    <span class="delivery-subtitle">Adiciona taxa fixa de + R$ 4,00</span>
+                </div>
+                <div class="toggle-switch">
+                    <input type="checkbox" id="chkEntrega">
+                    <span class="slider"></span>
+                </div>
+            </label>
+
+            <div id="campo-endereco" class="address-container">
+                <label for="txtEndereco" class="address-label">Endereço de entrega</label>
+                <input type="text" id="txtEndereco" class="address-input" placeholder="Rua, número, bairro e complemento">
+            </div>
+        </section>
+
+        <footer class="checkout-section">
+            <button class="btn-checkout" id="btnCalcular">Fechar Pedido</button>
+            
+            <div id="recibo" class="receipt-box">
+                <div class="receipt-divider"></div>
+                <div class="receipt-row total-row">
+                    <span>Total do Pedido</span>
+                    <span id="total-valor">R$ 0,00</span>
+                </div>
+                <p id="resumo-endereco" class="receipt-address"></p>
+            </div>
+        </footer>
+    </div>
+    <script src="ex02.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Cliente</title>
+</head>
+
+<body>
+    <main>
+        <h1>Cadastro de Cliente</h1>
+
+        
+        <form id="formCliente">
+            <div class="campo">
+                <label for="clienteId">Código</label>
+                <input type="number" id="clienteId" placeholder="Gerado automaticamente" readonly>
+            </div>
+
+            <div class="campo">
+                <label for="tipoCliente">Tipo de Cliente</label>
+                <select id="tipoCliente" required>
+                    <option value="">Selecione</option>
+                    <option value="F">Pessoa Física</option>
+                    <option value="J">Pessoa Jurídica</option>
+                </select>
+            </div>
+
+            <div class="campo">
+                <label for="cpfCnpjCliente">CPF / CNPJ</label>
+                <input type="text" id="cpfCnpjCliente" maxlength="18" placeholder="Digite o CPF ou CNPJ" required>
+            </div>
+
+            <div class="campo nome">
+                <label for="nomeCliente">Nome do Cliente</label>
+                <input type="text" id="nomeCliente" maxlength="100" placeholder="Digite o nome do cliente" required>
+            </div>
+
+            <div class="acoes">
+                <button type="reset" class="btn-limpar">Limpar</button>
+                <button type="button" id="btnCancelarEdicao" class="btn-cancelar-edicao">Cancelar edição</button>
+                <button type="submit" id="btnSalvar" class="btn-salvar">Salvar</button>
+            </div>
+        </form>
+
+        <p id="mensagem" class="mensagem"></p>
+
+        <h2>Clientes Cadastrados</h2>
+
+        <div class="tabela-area">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Tipo</th>
+                        <th>CPF / CNPJ</th>
+                        <th>Nome</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+
+                <tbody id="tabelaClientes">
+                    <tr>
+                        <td colspan="5">Carregando clientes...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../JavaScript/cadastroCliente.js"></script>
+</body>
+
+</html>

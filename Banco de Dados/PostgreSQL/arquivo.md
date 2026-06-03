@@ -1,0 +1,1 @@
+Anotações: entidades são posíveis tabelas no banco de dados

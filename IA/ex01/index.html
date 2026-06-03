@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada Interativa</title>
+    <style>
+        /* Estilização Geral */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        /* Container Principal */
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        /* Inputs e Botões */
+        .input-group {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 25px;
+        }
+
+        input[type="number"] {
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            width: 100px;
+            text-align: center;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        input[type="number"]:focus {
+            border-color: #007bff;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Área do Resultado */
+        .resultado-container {
+            margin-top: 20px;
+            text-align: left;
+            display: inline-block;
+        }
+
+        .linha-tabuada {
+            font-size: 18px;
+            color: #444;
+            padding: 5px 0;
+            border-bottom: 1px dashed #eee;
+        }
+
+        .linha-tabuada:last-child {
+            border-bottom: none;
+        }
+
+        .erro {
+            color: #dc3545;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Gerador de Tabuada</h1>
+        
+        <div class="input-group">
+            <input type="number" id="numInput" placeholder="digite um número">
+            <button onclick="gerarTabuada()">Calcular</button>
+        </div>
+
+        <div id="resultado" class="resultado-container">
+            </div>
+    </div>
+
+    <script>
+        function gerarTabuada() {
+            // Seleciona os elementos do HTML
+            const input = document.getElementById('numInput');
+            const resultadoDiv = document.getElementById('resultado');
+            
+            // Pega o valor digitado e converte para número inteiro
+            const numero = parseFloat(input.value);
+
+            // Limpa o resultado anterior
+            resultadoDiv.innerHTML = '';
+
+            // Validação simples: se não for um número válido, avisa o usuário
+            if (isNaN(numero)) {
+                resultadoDiv.innerHTML = '<p class="erro">Por favor, digite um número válido!</p>';
+                return;
+            }
+
+            // Laço de repetição para criar a tabuada de 1 a 10
+            for (let i = 1; i <= 10; i++) {
+                const resultadoMultiplicacao = numero * i;
+                
+                // Cria uma nova linha no HTML para cada item da tabuada
+                resultadoDiv.innerHTML += `<div class="linha-tabuada">${numero} x ${i} = <strong>${resultadoMultiplicacao}</strong></div>`;
+            }
+        }
+    </script>
+
+</body>
+</html>

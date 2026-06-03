@@ -1,0 +1,339 @@
+/* Reset básico e variáveis de design moderno */
+:root {
+    --bg-global: #f8fafc;
+    --bg-card: #ffffff;
+    --primary: #0f172a;
+    --primary-hover: #1e293b;
+    --accent: #10b981;
+    --text-main: #0f172a;
+    --text-muted: #64748b;
+    --border-color: #e2e8f0;
+    --radius-lg: 16px;
+    --radius-md: 12px;
+    --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+    --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.05), 0 4px 6px -4px rgba(15, 23, 42, 0.05);
+    --font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-global);
+    color: var(--text-main);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Container do App */
+.app-container {
+    background-color: var(--bg-card);
+    max-width: 480px;
+    width: 100%;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    padding: 32px;
+    border: 1px solid var(--border-color);
+}
+
+/* Cabeçalho */
+.header {
+    margin-bottom: 28px;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: var(--primary);
+    margin-bottom: 6px;
+}
+
+.header .subtitle {
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+/* Lista de Itens (Menu) */
+.menu-section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.hidden-checkbox {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Card customizado agindo como label interativa */
+.menu-card {
+    cursor: pointer;
+    display: block;
+}
+
+.card-content {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: var(--shadow-sm);
+}
+
+.menu-card:hover .card-content {
+    border-color: #cbd5e1;
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+}
+
+/* Efeito quando o item é marcado */
+.hidden-checkbox:checked + .card-content {
+    border-color: var(--accent);
+    background-color: #f0fdf4;
+}
+
+/* Checkbox estilizado elegante */
+.checkbox-custom {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #cbd5e1;
+    border-radius: 6px;
+    margin-right: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    flex-shrink: 0;
+}
+
+.hidden-checkbox:checked + .card-content .checkbox-custom {
+    background-color: var(--accent);
+    border-color: var(--accent);
+}
+
+.hidden-checkbox:checked + .card-content .checkbox-custom::after {
+    content: "";
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    margin-bottom: 2px;
+}
+
+/* Detalhes do texto do item */
+.item-details {
+    flex-grow: 1;
+    padding-right: 12px;
+}
+
+.item-name {
+    display: block;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 2px;
+}
+
+.item-desc {
+    display: block;
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.4;
+}
+
+.item-price {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--primary);
+    flex-shrink: 0;
+}
+
+/* Seção de Entrega */
+.delivery-section {
+    background-color: #f8fafc;
+    border-radius: var(--radius-md);
+    padding: 16px;
+    margin-bottom: 28px;
+    border: 1px dashed var(--border-color);
+}
+
+.delivery-toggle-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.delivery-title {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.delivery-subtitle {
+    display: block;
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 1px;
+}
+
+/* Toggle Switch Moderno (Estilo iOS) */
+.toggle-switch {
+    position: relative;
+    width: 44px;
+    height: 24px;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #cbd5e1;
+    transition: .3s;
+    border-radius: 24px;
+}
+
+.slider::before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .3s;
+    border-radius: 50%;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.toggle-switch input:checked + .slider {
+    background-color: var(--accent);
+}
+
+.toggle-switch input:checked + .slider::before {
+    transform: translateX(20px);
+}
+
+/* Container do Endereço (Animado suavemente pelo JavaScript) */
+.address-container {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+}
+
+.address-container.active {
+    max-height: 100px;
+    margin-top: 16px;
+    opacity: 1;
+}
+
+.address-label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.address-input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-family: var(--font-family);
+    font-size: 14px;
+    outline: none;
+    transition: all 0.2s;
+    background-color: #ffffff;
+}
+
+.address-input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(15, 23, 42, 0.08);
+}
+
+/* Botão de Finalização */
+.btn-checkout {
+    width: 100%;
+    padding: 16px;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    border-radius: var(--radius-md);
+    font-family: var(--font-family);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+}
+
+.btn-checkout:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.2);
+}
+
+/* Recibo e Resultados */
+.receipt-box {
+    display: none;
+    margin-top: 24px;
+}
+
+.receipt-divider {
+    border-top: 2px dashed var(--border-color);
+    margin-bottom: 16px;
+}
+
+.receipt-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.total-row {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+#total-valor {
+    color: var(--accent);
+}
+
+.receipt-address {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-top: 8px;
+    background-color: #f1f5f9;
+    padding: 10px 12px;
+    border-radius: 6px;
+    border-left: 3px solid #cbd5e1;
+}

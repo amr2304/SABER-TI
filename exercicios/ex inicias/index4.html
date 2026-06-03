@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de clientes</title>
+    <style>
+        body {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(255, 252, 252);
+        }
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            border: 2px solid rgb(8, 8, 145);
+            border-radius: 8px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        input {
+            border-radius: 5px;
+            border: 0.5px solid rgb(27, 27, 27);
+            width: 200px;
+        }
+
+        input:hover {
+            border: 2px solid rgb(8, 8, 145);
+        }
+
+        select {
+            border-radius: 5px;
+            border: 0.5px solid rgb(27, 27, 27);
+            width: 200px;
+        }
+
+        select:hover {
+            border: 2px solid rgb(8, 8, 145);
+        }
+
+        button {
+            border-color: aliceblue;
+            margin-top: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <div class="header" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
+            <h1 style="color:rgb(8, 8, 145);">Cadastro de Clientes</h1>
+            <p>Prencha os dados abaixo para cadastrar um novo cliente</p>
+        </div>
+        <div class="input">
+            <form>
+                <label>Nome Completo</label>
+                <br>
+                <input type="name" id="Nome" placeholder="Digite seu Nome">
+                <br>
+                <label>CPF</label>
+                <br>
+                <input type="text" id="CPF" placeholder="Digite seu CPF">
+                <br>
+                <label>E-mail</label>
+                <br>
+                <input type="email" id="E-mail" placeholder="Digite seu email">
+                <br>
+                <label>Telefone</label>
+                <br>
+                <input type="text" id="Telefone" placeholder="Digite seu Telefone">
+                <br>
+                <label>Data de Nascimento</label>
+                <br>
+                <input type="date" id="Nascimento" placeholder="Data de Nascimento">
+                <br>
+                <label>Endereço</label>
+                <br>
+                <input type="text" id="Endereço" placeholder="Digite seu Endereço">
+                <br>
+                <label>Estado</label>
+                <br>
+                <select id="estado" name="estado">
+                    <option value="">Selecione</option>
+                    <option value="SP">São Paulo</option>
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="MG">Minas Gerais</option>
+                    <option value="PR">Paraná</option>
+                    <option value="SC">Santa Catarina</option>
+                    <option value="RS">Rio Grande do Sul</option>
+                </select>
+                <br>
+                <label>Cidade</label>
+                <br>
+                <input type="text" id="Cidade" placeholder="Digite sua Cidade">
+                <br>
+                <label>Tipo de Cliente</label>
+                <br>
+                <select id="Cliente" name="Cliente">
+                    <option id="">Selecione</option>
+                    <option id="PF">Pessoa Física</option>
+                    <option id="PF">Pessoa Jurídica</option>
+                </select>
+                <br>
+                <label>Observações</label>
+                <br>
+                <textarea placeholder="Digite suas Observações" style=" width:200px;"></textarea>
+                <br>
+                <button type="onclick" style="color:white; background-color: rgb(8, 8, 145);">Cadastrar Cliente</button>
+                <button type="onclick" style="color:white; background-color:gray;">Limpar</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

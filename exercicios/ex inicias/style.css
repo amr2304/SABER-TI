@@ -1,0 +1,12 @@
+.container{
+    font-family:Verdana, Geneva, Tahoma, sans-serif ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+input{
+    width:200px;
+    border-radius: 5px;
+    border: 1px solid rgb(59, 58, 58);
+}   

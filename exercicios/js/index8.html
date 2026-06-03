@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salário</title>
+</head>
+
+<body>
+    <div class="container" style="display:flex; flex-direction: row;">
+        <div class="meses" style="display: flex; flex-direction: column;">
+            <p>Janeiro</p>
+            <p>Fevereiro</p>
+            <p>Março</p>
+            <p>Abril</p>
+            <p>Maio</p>
+            <p>Junho</p>
+            <p>Julho</p>
+            <p>Agosto</p>
+            <p>Setembro</p>
+            <p>Outubro</p>
+            <p>Novembro</p>
+            <p>Decembro</p>
+        </div>
+
+        <div class="salário"
+            style="display: flex; flex-direction: column; width: 200px; align-items: center; gap:30px;">
+
+            <input type="number" id="JaneiroBruto" placeholder="Digite seu salário bruto" style=" margin-top  : 10px;">
+
+            <input type="number" id="FevereiroBruto" placeholder="Digite seu salário bruto">
+
+            <input type="number" id="MarçoBruto" placeholder="Digite seu salário bruto">
+
+            <input type="number" id="AbrilBruto" placeholder="Digite seu salário bruto">
+
+            <input type="number" id="MaioBruto" placeholder="Digite seu salário bruto">
+
+            <input type="number" id="JunhoBruto" placeholder="Digite seu salário bruto">
+
+            <input type="number" id="JulhoBruto" placeholder="Digite seu salário bruto">
+
+            <input type="number" id="AgostoBruto" placeholder="Digite seu salário bruto">
+
+            <input type="number" id="SetembroBruto" placeholder="Digite seu salário bruto">
+
+            <input type="number" id="OutubroBruto" placeholder="Digite seu salário bruto">
+
+            <input type="number" id="NovembroBruto" placeholder="Digite seu salário bruto">
+
+            <input type="number" id="DecembroBruto" placeholder="Digite seu salário bruto">
+        </div>
+
+        <div clas="desconto"
+            style="display: flex; flex-direction: column; width: 200px;  align-items: center; gap:30px;">
+
+            <input type="number" id="JaneiroDesconto" placeholder="Digite a porcentagem de desconto"
+                style=" margin-top  : 10px;">
+
+            <input type="number" id="FevereiroDesconto" placeholder="Digite a porcentagem de desconto">
+
+            <input type="number" id="MarçoDesconto" placeholder="Digite a porcentagem de desconto">
+
+            <input type="number" id="AbrilDesconto" placeholder="Digite a porcentagem de desconto">
+
+            <input type="number" id="MaioDesconto" placeholder="Digite a porcentagem de desconto">
+
+            <input type="number" id="JunhoDesconto" placeholder="Digite a porcentagem de desconto">
+
+            <input type="number" id="JulhoDesconto" placeholder="Digite a porcentagem de desconto">
+
+            <input type="number" id="AgostoDesconto" placeholder="Digite a porcentagem de desconto">
+
+            <input type="number" id="SetembroDesconto" placeholder="Digite a porcentagem de desconto">
+
+            <input type="number" id="OutubroDesconto" placeholder="Digite a porcentagem de desconto">
+
+            <input type="number" id="NovembroDesconto" placeholder="Digite a porcentagem de desconto">
+
+            <input type="number" id="DecembroDesconto" placeholder="Digite a porcentagem de desconto">
+        </div>
+        <div class="SalárioL"
+            style="display: flex; flex-direction: column; width: 200px;  align-items: center; gap:30px; border:1px solid black">
+            <ul id="SalarioLiquido"></ul>   
+        </div>
+    </div>
+    <button onclick="Calcular()">Calcular Salario Liquido</button>
+    <script src="ex8+.js"></script>
+</body>
+
+</html>
