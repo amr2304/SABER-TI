@@ -4,16 +4,31 @@ const SUPABASE_ANON_KEY = "sb_publishable_C7DX2jQep57xHIu86zu0-g_BmCTlkNQ";
 // Cria a conexão entre seu JavaScript e o Supabase
 const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-function cadastrarProduto(){
-    const Categoria = document.getElementById("Categoria").value;
-    const Descricao = document.getElementById("inputDesc").value;
+async function SalvarCategoria(evento){
+     evento.preventDefault(); //para não dar um reset na página 
+     
+     const ds_categoria = document.getElementById("CategoriaInput").value;
+     const produtoid = document.getElementById("CodInput").value;
+     const mensagem = document.getElementById("mensagem");
 
-    const {data,error} = await supabaseClient 
-    .from ("Produto")
-    .select("ds_produto")
-    .insert("Categoria INTO ds_produto")
-    .select("obs_produto")
-    .insert("Descricao INTO obs_produto")
-    
+     const novaCategoria = {
+        categoriaprodutoid: produtoid,
+        ds_categoria_produto: ds_categoria,
+        
+     };
+     
+    const {error} = await supabaseClient 
+    .from("categoria_produto")
+    .insert(novaCategoria);
+
+    if (error){
+     mensagem.innerHTML = "Erro ao salvar a categoria: " + error.message;
+     mensagem.style.color = "red";
+     return;
     }
+    
+    mensagem.innerHTML = "Categoria salva com sucesso!";
+    mensagem.style.color = "green";
+    document.querySelector("form").reset();
+}
     

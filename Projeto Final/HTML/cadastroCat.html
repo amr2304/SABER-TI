@@ -4,24 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Categoria</title>
+    <link rel="stylesheet" href="../CSS/cadastroCat.css">
 </head>
 <body>
         <form>
-    <label>Categoria do Produto</label>
-     <select id="Categoria">
-        <option value="1">Selecione</option>
-        <option value="2">Informática</option>
-        <option value="3">Escritório</option>
-        <option value="4">Alimentos</option>
-        <option value="5">Serviços</option>
-        <option value="6">Manutenção</option>
+            <label>Código da Categoria</label>
+            <input type="number" id="CodInput" placeholder="Digite o código do produto" required>
+    <label>Descrição da Categoria</label>
+     <select id="CategoriaInput" required>
+        <option value="">Selecione</option>
+        <option value="Informática">Informática</option>
+        <option value="Escritório">Escritório</option>
+        <option value="Alimentos">Alimentos</option>
+        <option value="Serviços">Serviços</option>
+        <option value="Manutenção">Manutenção</option>
      </select>
-     <label>Descrição do Produto</label>
-     <input type="text" id="inputDesc">
-      <button onclick="cadastrarProduto()" type="submit">Salvar</button>
+      <button onclick="SalvarCategoria(event)" type="submit">Salvar</button>
       <button type="reset">Limpar</button>
+         <div id="mensagem">
+     </div>
     </form>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <script src="/Projeto Final/JavaScript/cadatroCat.js"></script>
+    <script src="../JavaScript/cadatroCat.js"></script>
 </body>
 </html>

@@ -1,97 +1,81 @@
-/* Reset básico para limpar margens e definir a fonte */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-.container{
-    display:flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap:10px;
-}
-.container2{
-    display:flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap:10px;
-}
-/* Fundo da página escuro, simulando o fundo da imagem */
+@import "theme.css";
+
+/* ===========================================================
+   Home — Menu principal do ERP
+   =========================================================== */
 body {
-    background-color: #ffffff;
-    /* Se quiser usar uma imagem de fundo parecida com a lava, descomente a linha abaixo e insira o link da sua imagem */
-    /* background: url('sua-imagem-de-fundo.jpg') no-repeat center center fixed; background-size: cover; */
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 10px;
-    padding: 40px;
+  min-height: 100vh;
+  padding: 48px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
 }
 
-/* Layout dos containers dos botões */
-body > div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+body::before {
+  content: "Painel ERP";
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  margin-bottom: 8px;
 }
 
-/* Estilo geral dos botões (Cards maiores) */
-button {
-    width: 320px;
-    height: 180px;
-    border: none;
-    border-radius: 4px;
-    font-size: 1.15rem;
-    font-weight: 500;
-    cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
-    padding: 20px;
-    text-align: center;
+.container,
+.container2 {
+  width: 100%;
+  max-width: var(--container);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
 }
 
-/* Efeito ao passar o mouse */
-button:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
-    filter: brightness(1.05);
+.container > div,
+.container2 > div {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
 }
 
-/* Cores específicas inspiradas na interface da foto */
-
-/* 1. Cadastro Cliente - Verde (Estilo "Correio") */
-.CadastroCliente button {
-    background-color: antiquewhite;
-    color: #333;
+.container > div:hover,
+.container2 > div:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+  border-color: color-mix(in srgb, var(--primary) 40%, var(--border));
 }
 
-/* 2. Categoria Produto - Branco (Estilo "Telefonia") */
-/* O seletor de atributo [classs=...] garante que funcione mesmo com o erro de digitação no HTML original */
-.CadastroCategoriaProduto button, 
-div[classs="CadastroCategoriaProduto"] button {
-    background-color: #111010;
-    color:  #ffffff;/* Texto cinza escuro para contraste */
+.container button,
+.container2 button {
+  width: 100%;
+  padding: 14px 18px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  background: var(--surface-2);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  text-align: left;
 }
 
-/* 3. Cadastro Produtos - Laranja (Estilo "Widgets do site") */
-.CadastroProdutos button {
-    background-color: #0a0da3;
-    color: #ffffff;
+.container button:hover,
+.container2 button:hover {
+  background: var(--primary);
+  color: var(--primary-contrast);
+  border-color: var(--primary);
 }
 
-/* 4. Orçamento - Ciano/Verde-água (Estilo "Formulário do site") */
-.Orcamento button {
-    background-color: #11c019;
-    color: #ffffff;
-}
+/* Botão Sair em destaque vermelho */
 .Sair button {
-    background-color: rgb(156, 25, 25);
-    color:#ffffff;
+  background: transparent;
+  color: var(--danger);
+  border-color: color-mix(in srgb, var(--danger) 40%, var(--border));
+}
+
+.Sair button:hover {
+  background: var(--danger);
+  color: #fff;
+  border-color: var(--danger);
 }

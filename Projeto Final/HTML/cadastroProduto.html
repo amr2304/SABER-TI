@@ -4,8 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Produto</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        </style>
 </head>
 <body>
+<div class="container">
+    <form>
+    <label>Código do Produto</label>
+    <input type="number" id="inputCod" placeholder="Digite o código do produto" required>
+    <label>Categoria do Produto</label>
+    <select id="inputCategoria" required>
+        <option value="">Selecione</option>
+        <option value="1">Informática</option>
+        <option value="2">Escritório</option>
+        <option value="3">Alimentos</option>
+        <option value="4">Serviços</option>
+        <option value="5">Manutenção</option>
+    </select>
+    <label>Descrição</label>
+    <input type="text" id="ds_input" placeholder="Digite a descrição do produto" required>
+    <label>Observação</label>
+    <textarea id="inputObs" placeholder="Digite a observação do produto"></textarea>
+    <label>Valor de Venda</label>
+    <input type="number" id="inputValor" placeholder="Digite o valor de venda do produto" step="0.01" required>
+    <label>Data de Cadastro</label>
+    <input type="date" id="inputData" required>
+    <label>Status</label>
+    <select id="inputStatus" required>
+        <option value="">Selecione</option>
+        <option value="Ativo">Ativo</option>
+        <option value="Inativo">Inativo</option>
+    </select>
+    <button onclick="salvarProduto(event)" type="submit">Salvar</button>  
+    <button type="reset">Limpar</button>
+        <div id="mensagem"></div>
+</form>  
+</div>
 
+<!-- Lista de Produtos -->
+<div class="container" style="max-width: 900px;">
+    <h2>Produtos Cadastrados</h2>
+    <table id="tabelaProdutos" border="1" style="width: 100%; margin-top: 20px;">
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Descrição</th>
+                <th>Categoria</th>
+                <th>Valor</th>
+                <th>Status</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody id="corpoProdutos">
+        </tbody>
+    </table>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../JavaScript/cadastroProduto.js"></script>
 </body>
 </html>
